@@ -57,7 +57,8 @@
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="bg-white py-8 px-4 shadow-sm rounded-xl sm:px-10">
-                <form class="space-y-6">
+                <form action="{{ route('login.post') }}" method="POST" class="space-y-6">
+                    @csrf
                     <!-- Email Input -->
                     <div>
                         <label for="user" class="block text-sm font-medium text-gray-700">Username</label>
@@ -107,18 +108,17 @@
     <script src="{{ asset('assets') }}/js/swal.js"></script>
 
     <script>
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Mencegah reload halaman
+    // document.querySelector("form").addEventListener("submit", function(event) {
+    //     event.preventDefault();
         
-        let username = document.getElementById("username").value.trim();
-        let password = document.getElementById("password").value.trim();
+    //     let username = document.getElementById("username").value.trim();
+    //     let password = document.getElementById("password").value.trim();
         
-        if (!username || !password) {
-            alert("username dan password harus diisi!");
-            return;
-        }
-
-        // Simulasi autentikasi
+    //     if (!username || !password) {
+    //         alert("username dan password harus diisi!");
+    //         return;
+    //     }
+    // })
     </script>
 
 

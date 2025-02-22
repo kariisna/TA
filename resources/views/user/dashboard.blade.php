@@ -76,13 +76,18 @@
                     </div>
                     <div class="relative">
                         <div id="profileButton" class="flex items-center space-x-3 bg-white/10 px-4 py-2 rounded-full cursor-pointer">
-                            <span class="text-white font-medium">Sarah Putri</span>
+                            <span class="text-white font-medium">{{ Auth::check() ? (Auth::user()->username ?? 'kosong cak') : 'Guest' }}</span>
                             <i class="fas fa-chevron-down text-white text-sm"></i>
                         </div>
 
                         <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
                             <a href="{{ route('user.profile') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
-                            <a href="{{ route('login') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                    <span>Logout</span>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
