@@ -14,7 +14,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/create', function () { return view('admin.create'); })->name('admin.create');
 });
 
-Route::prefix('user')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/', function () { return view('user.dashboard'); })->name('user.dashboard');
     Route::get('/profile', function () { return view('user.profile'); })->name('user.profile');
     Route::get('/catatan', function () { return view('user.catatan'); })->name('user.catatan');
@@ -25,9 +25,17 @@ Route::prefix('konsoler')->group(function () {
     Route::get('/', function () { return view('konsoler.index'); })->name('konsoler.index');
 });
 
-Route::get('/login', [LoginController ::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::prefix('auth')->group(function () {
+    Route::prefix('login')->group(function () {
+        Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+        Route::post('/', [LoginController::class, 'login'])->name('login.post');
+    });
+    
+    Route::prefix('logout')->group(function () {
+        Route::post('/', [LoginController::class, 'logout'])->name('logout');
+    });
+});
 
-
-
+// Route::get('/login', [LoginController ::class, 'showLoginForm'])->name('login');
+// Route::post('/login', [LoginController::class, 'login']);
+// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

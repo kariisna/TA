@@ -57,7 +57,8 @@
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="bg-white py-8 px-4 shadow-sm rounded-xl sm:px-10">
-                <form class="space-y-6">
+                <form class="space-y-6" method="POST" action="{{ route('login.post') }}">
+                    @csrf
                     <!-- Email Input -->
                     <div>
                         <label for="user" class="block text-sm font-medium text-gray-700">Username</label>
@@ -65,10 +66,10 @@
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fas fa-envelope text-gray-400"></i>
                             </div>
-                            <input id="username" name="username" type="username" required 
+                            <input id="email" name="email" type="email" required 
                                 class="form-input block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg 
                                        placeholder-gray-400 focus:outline-none transition-all"
-                                placeholder="Masukkan Username Anda">
+                                placeholder="Masukkan Email Anda">
                         </div>
                     </div>
 
