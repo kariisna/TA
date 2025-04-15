@@ -57,7 +57,7 @@
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="bg-white py-8 px-4 shadow-sm rounded-xl sm:px-10">
-                <form action="{{ route('login.post') }}" method="POST" class="space-y-6">
+                <form action="{{ route('login') }}" method="POST" class="space-y-6">
                     @csrf
                     <!-- Email Input -->
                     <div>

@@ -128,7 +128,7 @@
                         </span>
                     </div>
                     <h3 class="text-gray-600 text-sm font-medium mb-4">Buat Jadwal Baru</h3>
-                    <a href="{{ route('admin.create') }}"
+                    <a href="{{ route('admin.jadwal') }}"
                         class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">
                         <i class="fas fa-plus mr-2"></i>Tambah Jadwal
                     </a>

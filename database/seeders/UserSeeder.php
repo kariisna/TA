@@ -17,6 +17,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@webkonsul.com',
             'password' => Hash::make('admin123'),
             'role' => 'admin',
+            'kelas' => '',
+            'no_hp' => '000',
         ]);
 
         // Create Teacher User
@@ -26,15 +28,37 @@ class UserSeeder extends Seeder
             'email' => 'teacher@webkonsul.com',
             'password' => Hash::make('teacher123'),
             'role' => 'teacher',
+            'kelas' => '',
+            'no_hp' => '08599999999',
         ]);
 
         // Create Student User
         User::create([
-            'username' => 'ancaaaahhh',
-            'name' => 'Student User',
+            'username' => 'anca',
+            'name' => 'Anca dwi krisna',
             'email' => 'student@webkonsul.com',
             'password' => Hash::make('anca'),
             'role' => 'student',
+            'kelas' => 'XII RPL A',
+            'no_hp' => '8599999999',
+        ]);
+        User::create([
+            'username' => 'arif',
+            'name' => 'Arif kurniawan',
+            'email' => 'student1@webkonsul.com',
+            'password' => Hash::make('arif'),
+            'role' => 'student',
+            'kelas' => 'XII RPL A',
+            'no_hp' => '8599999999',
+        ]);
+        User::create([
+            'username' => 'atha',
+            'name' => 'Athadzaki alvaro',
+            'email' => 'student2@webkonsul.com',
+            'password' => Hash::make('atha'),
+            'role' => 'student',
+            'kelas' => 'XII RPL A',
+            'no_hp' => '8599999999',
         ]);
     }
 }

@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('kelas')->nullable();
+            $table->string('no_hp');
             $table->enum('role', ['admin', 'teacher', 'student']);
             $table->rememberToken();
             $table->timestamps();
