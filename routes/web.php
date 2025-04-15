@@ -21,7 +21,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/create', function () { return view('admin.create'); })->name('admin.create');
 });
 
-Route::prefix('user')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/', function () { return view('user.dashboard'); })->name('user.dashboard');
     Route::get('/profile', function () { return view('user.profile'); })->name('user.profile');
     Route::get('/catatan', function () { return view('user.catatan'); })->name('user.catatan');
