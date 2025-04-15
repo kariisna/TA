@@ -24,7 +24,7 @@ class UserController extends Controller
                 'name' => 'required|string|max:255',
                 'username' => 'required|string|max:255|unique:users',
                 'email' => 'required|string|email|max:255|unique:users',
-                'password' => 'required|string|min:6|confirmed',
+                'password' => 'required|string|min:3|confirmed',
                 'role' => 'required|in:admin,teacher,student',
                 'kelas' => 'nullable|string|max:255',
                 'no_hp' => 'nullable|string|max:15'
@@ -65,7 +65,7 @@ class UserController extends Controller
                 'kelas' => 'nullable|string|max:255',
                 'no_hp' => 'nullable|string|max:15',
                 'role' => 'required|in:admin,teacher,student',
-                'password' => 'nullable|string|min:8'
+                'password' => 'nullable|string|min:3'
             ]);
 
             $user->name = $validated['name'];

@@ -9,7 +9,18 @@ use App\Http\Controllers\LoginController;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () { return view('admin.dashboard'); })->name('admin.dashboard');
-
+    
+    // Counseling Schedule Routes
+    Route::get('/jadwal', [ScheduleController::class, 'index'])->name('jadwal.index');
+    Route::get('/jadwal/today', [ScheduleController::class, 'today'])->name('jadwal.today');
+    Route::get('/jadwal/this-week', [ScheduleController::class, 'thisWeek'])->name('jadwal.this-week');
+    Route::post('/jadwal', [ScheduleController::class, 'store'])->name('jadwal.store');
+    Route::get('/jadwal/{id}/edit', [ScheduleController::class, 'edit'])->name('jadwal.edit');
+    Route::put('/jadwal/{id}', [ScheduleController::class, 'update'])->name('jadwal.update');
+    Route::delete('/jadwal/{id}', [ScheduleController::class, 'destroy'])->name('jadwal.destroy');
+    Route::patch('/jadwal/{id}/status', [ScheduleController::class, 'updateStatus'])->name('jadwal.update-status');
+    Route::get('/get-student-class/{id}', [ScheduleController::class, 'getStudentClass'])->name('get-student-class');
+    
     // user
     Route::get('/user', [UserController::class, 'index'])->name('admin.user');
     Route::post('/user/create', [UserController::class, 'store'])->name('admin.user.store');
@@ -17,8 +28,8 @@ Route::prefix('admin')->group(function () {
     Route::put('/user/update/{user}', [UserController::class, 'update'])->name('admin.user.update');
 
 
-    Route::get('/jadwal', function () { return view('admin.jadwal'); })->name('admin.jadwal');
-    Route::get('/create', function () { return view('admin.create'); })->name('admin.create');
+    // Route::get('/jadwal', function () { return view('admin.jadwal'); })->name('admin.jadwal');
+    // Route::get('/create', function () { return view('admin.create'); })->name('admin.create');
 });
 
 Route::middleware('auth')->group(function () {

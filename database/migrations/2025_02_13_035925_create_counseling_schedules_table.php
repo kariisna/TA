@@ -10,8 +10,10 @@ return new class extends Migration {
         Schema::create('counseling_schedules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
+            $table->string('notes')->nullable();
             $table->date('counseling_date');
             $table->time('counseling_time');
+            $table->integer('duration');
             $table->enum('status', ['scheduled', 'completed', 'canceled'])->default('scheduled');
             $table->timestamps();
         });

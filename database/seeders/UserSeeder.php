@@ -23,9 +23,18 @@ class UserSeeder extends Seeder
 
         // Create Teacher User
         User::create([
-            'username' => 'teacher',
-            'name' => 'Teacher User',
+            'username' => 'samsudin',
+            'name' => 'Pak Samsudin',
             'email' => 'teacher@webkonsul.com',
+            'password' => Hash::make('teacher123'),
+            'role' => 'teacher',
+            'kelas' => '',
+            'no_hp' => '08599999999',
+        ]);
+        User::create([
+            'username' => 'jo',
+            'name' => 'Pak Jo',
+            'email' => 'teacher2@webkonsul.com',
             'password' => Hash::make('teacher123'),
             'role' => 'teacher',
             'kelas' => '',
@@ -39,7 +48,7 @@ class UserSeeder extends Seeder
             'email' => 'student@webkonsul.com',
             'password' => Hash::make('anca'),
             'role' => 'student',
-            'kelas' => 'XII RPL A',
+            'kelas' => 'XII TSM A',
             'no_hp' => '8599999999',
         ]);
         User::create([
@@ -48,7 +57,7 @@ class UserSeeder extends Seeder
             'email' => 'student1@webkonsul.com',
             'password' => Hash::make('arif'),
             'role' => 'student',
-            'kelas' => 'XII RPL A',
+            'kelas' => 'X TKJ A',
             'no_hp' => '8599999999',
         ]);
         User::create([
@@ -58,6 +67,24 @@ class UserSeeder extends Seeder
             'password' => Hash::make('atha'),
             'role' => 'student',
             'kelas' => 'XII RPL A',
+            'no_hp' => '8599999999',
+        ]);
+        User::create([
+            'username' => 'abror',
+            'name' => 'Abrar rayhan',
+            'email' => 'student3@webkonsul.com',
+            'password' => Hash::make('abror'),
+            'role' => 'student',
+            'kelas' => 'XII BP A',
+            'no_hp' => '8599999999',
+        ]);
+        User::create([
+            'username' => 'egha',
+            'name' => 'Mas Egha',
+            'email' => 'student4@webkonsul.com',
+            'password' => Hash::make('egha'),
+            'role' => 'student',
+            'kelas' => 'XII TKR A',
             'no_hp' => '8599999999',
         ]);
     }
